@@ -5,8 +5,10 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 import org.ats.entities.Department;
+import org.ats.entities.Job;
 
 import java.util.List;
+import java.util.Set;
 
 public class DepartmentDaoImpl implements DepartmentDao {
     private EntityManager entityManager;
@@ -35,8 +37,29 @@ public class DepartmentDaoImpl implements DepartmentDao {
                 tx.rollback();
             }
             throw new RuntimeException("Has an error occurred!");
+        } finally {
+            entityManager.close();
         }
         return dept;
+    }
+
+    @Override
+    public Department findById(Long id) {
+        try {
+            Department department = entityManager.find(Department.class, id);
+
+            //Proxy Object
+            Set<Job> jobs = department.getJobs();
+
+            System.out.println(jobs);
+
+            return department;
+
+        } catch (Exception e) {
+            throw new RuntimeException("Has an error occurred!");
+        } finally {
+            entityManager.close();
+        }
     }
 
     @Override
@@ -45,4 +68,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
                 "FROM Department d", Department.class);
         return query.getResultList();
     }
+
+
 }

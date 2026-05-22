@@ -9,4 +9,6 @@ public interface DepartmentDao {
 
     Department createDepartment(Department dept);
 
+    Department findById(Long id);
+
 }

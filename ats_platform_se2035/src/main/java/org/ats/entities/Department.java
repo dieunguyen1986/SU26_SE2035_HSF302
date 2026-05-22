@@ -10,7 +10,7 @@ import java.util.Set;
         name = "departments")
 @NoArgsConstructor@AllArgsConstructor
 @Setter@Getter
-@ToString
+@ToString(exclude = {"jobs"})
 public class Department extends  BaseEntity{
 
     @Id
@@ -23,6 +23,6 @@ public class Department extends  BaseEntity{
 
     private String description;
 
-    @OneToMany(mappedBy = "department")
+    @OneToMany(mappedBy = "department", fetch =  FetchType.LAZY, cascade =   CascadeType.ALL)
     private Set<Job> jobs;
 }

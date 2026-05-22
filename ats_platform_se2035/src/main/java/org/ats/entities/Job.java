@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "jobs")
 @Setter@Getter
 @NoArgsConstructor@AllArgsConstructor
-@ToString
+@ToString(exclude = "department")
 @Builder
 public class Job {
 
@@ -45,7 +46,10 @@ public class Job {
 
     private OffsetDateTime publishedAt;
 
-    @ManyToOne
+    @ManyToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "department_id", referencedColumnName = "dept_id")
     private Department department;
+
+    @OneToMany(mappedBy = "job")
+    private Set<JobSkill> skills;
 }
