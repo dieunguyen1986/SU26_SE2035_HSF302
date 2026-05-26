@@ -7,12 +7,13 @@ import jakarta.persistence.*;
 public class JobSkill {
 
     @Id
-    @Column(name = "skill_id")
+
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "skill_id", referencedColumnName = "id")
     private Skill skill;
 
     @Id
-    @Column(name = "job_id")
+    @JoinColumn(name = "job_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Job job;
 }

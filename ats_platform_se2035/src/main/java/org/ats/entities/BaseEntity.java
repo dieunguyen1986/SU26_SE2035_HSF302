@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @ToString
 @MappedSuperclass
 public class BaseEntity {
-
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 

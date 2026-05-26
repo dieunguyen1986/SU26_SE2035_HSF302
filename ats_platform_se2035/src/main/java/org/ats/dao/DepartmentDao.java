@@ -11,4 +11,6 @@ public interface DepartmentDao {
 
     Department findById(Long id);
 
+    boolean isExisted(String name);
+
 }
