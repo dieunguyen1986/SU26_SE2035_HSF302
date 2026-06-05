@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor@AllArgsConstructor
 @ToString(exclude = "department")
 @Builder
-public class Job {
+public class Job extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

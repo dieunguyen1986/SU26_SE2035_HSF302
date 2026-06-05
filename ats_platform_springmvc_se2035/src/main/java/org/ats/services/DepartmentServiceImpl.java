@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Service("departmentService") // IoC
+//@Service("departmentService") // IoC
 public class DepartmentServiceImpl implements DepartmentService {
 
     private DepartmentDao departmentDao;

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Set;
 
-@Repository // IoC
+//@Repository // IoC
 public class DepartmentDaoImpl implements DepartmentDao {
     private EntityManager entityManager;
 

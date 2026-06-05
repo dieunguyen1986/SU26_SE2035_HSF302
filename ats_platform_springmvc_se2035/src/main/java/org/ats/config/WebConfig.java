@@ -1,4 +1,4 @@
-package org.ats;
+package org.ats.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -16,7 +16,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "org.ats.controller")
+@ComponentScan(basePackages = "org.ats")
 public class WebConfig implements ApplicationContextAware {
     private  ApplicationContext applicationContext;
 

@@ -1,7 +1,9 @@
 package org.ats.controller;
 
+import org.ats.entities.Job;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class JobController {
 
     @RequestMapping(method = RequestMethod.POST)
-    public  String createJob(){
+    public  String createJob(@ModelAttribute Job job){
 
         return null;
     }

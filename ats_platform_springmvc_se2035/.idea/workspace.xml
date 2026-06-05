@@ -10,14 +10,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83bfa993-325e-4a81-9084-752d69289079" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/auths/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/general_dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/config/WebDataConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/dao/AuthDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/dao/AuthDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/dto/JobRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/dto/UserRegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/dto/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/exceptions/AppExceptionHandling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/ats/services/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/WebInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/WebInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/controller/JobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/dao/DepartmentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/dao/DepartmentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/entities/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ats/services/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ats/services/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/general_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/general_dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,11 +89,20 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.ats.services" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
@@ -216,7 +240,9 @@
       <updated>1780037780326</updated>
       <workItem from="1780037781494" duration="6780000" />
       <workItem from="1780127379857" duration="30000" />
-      <workItem from="1780390650485" duration="4506000" />
+      <workItem from="1780390650485" duration="4902000" />
+      <workItem from="1780639643935" duration="1104000" />
+      <workItem from="1780640789114" duration="5897000" />
     </task>
     <servers />
   </component>
