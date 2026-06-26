@@ -8,6 +8,6 @@ import lombok.*;
 public class UserRegisterRequest {
     private String fullName;
     private String email;
-    private String password_hash;
+    private String passwordHash;
     private String phone;
 }

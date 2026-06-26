@@ -12,7 +12,7 @@ import lombok.*;
 @ToString
 @org.hibernate.annotations.NamedQuery(name = "login",
         query = "FROM User u WHERE u.email" +
-        " = :email AND u.password_hash = :password")
+        " = :email AND u.passwordHash = :password")
 public class User extends BaseEntity {
     @Id
     @Column(name = "id")
@@ -29,7 +29,7 @@ public class User extends BaseEntity {
     private String email;
 
     @Column(name = "password_hash", unique = false, nullable = false, columnDefinition = "VARCHAR(255)")
-    private String password_hash;
+    private String passwordHash;
 
     @Column(name = "phone", unique = true, nullable = false, columnDefinition = "VARCHAR(30)")
     private String phone;

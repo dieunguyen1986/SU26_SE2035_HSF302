@@ -1,11 +1,14 @@
 package org.ats.services;
 
 import lombok.RequiredArgsConstructor;
-import org.ats.dao.JobDao;
 import org.ats.dao.JobSkillDao;
 import org.ats.dto.JobRequest;
 import org.ats.entities.*;
 import org.ats.exceptions.JobNotFoundException;
+import org.ats.repositories.JobRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,43 +23,41 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class JobServiceImpl implements JobService {
-    private final JobDao jobDao;
+    private final JobRepository jobRepository;
     private final JobSkillDao jobSkillDao;
 
     @Override
     public Job createJob(JobRequest jobRequest) {
         // Validate
-
-
-        return jobDao.createJob(toEntity(jobRequest));
+        return jobRepository.save(toEntity(jobRequest));
     }
 
     @Override
-    public List<Job> findByTitle(String title) {
-        return List.of();
+    public Page<Job> search(String title, String location, Integer pageIndex, Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageIndex, pageSize);
+
+        return jobRepository.findByTitleContainingAndLocationEquals(title, location, pageable);
     }
 
     @Override
     public List<Job> getAll(String keyword) {
         if (keyword == null) {
-            return jobDao.findAll();
+            return jobRepository.findAll();
         }
 
-        return jobDao.findAll("%" + keyword + "%");
+        return jobRepository.findByTitleContainingOrDescriptionContaining(keyword, keyword);
     }
 
     @Override
     public void delete(Long id) {
-        jobDao.delete(id);
+        Job job = jobRepository.findById(id).orElseThrow(() -> new RuntimeException("Job not found"));
+
+        jobRepository.delete(job);
     }
 
     @Override
     public JobRequest getJobById(Long id) {
-        Job job = jobDao.findById(id);
-
-        if (job == null) {
-            throw new JobNotFoundException("Job not found");
-        }
+        Job job = jobRepository.findById(id).orElseThrow(() -> new JobNotFoundException("Job not found"));
 
         return toDto(job);
     }

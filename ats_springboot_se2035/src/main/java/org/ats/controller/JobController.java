@@ -71,7 +71,7 @@ public class JobController {
 
         System.out.println(jobs);
 
-        return "jobs/general_dashboard";
+        return "views/jobs/general_dashboard";
     }
 
     @GetMapping(path = "/{id}")

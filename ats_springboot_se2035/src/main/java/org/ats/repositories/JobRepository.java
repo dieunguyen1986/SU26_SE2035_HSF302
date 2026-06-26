@@ -1,0 +1,21 @@
+package org.ats.repositories;
+
+
+import org.ats.entities.Job;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface JobRepository extends JpaRepository<Job, Long> {
+    Page<Job> findByTitleContainingAndLocationEquals(String keyword, String location,Pageable page);
+
+    List<Job> findByTitleContainingOrDescriptionContaining(String title, String des);
+
+
+}
